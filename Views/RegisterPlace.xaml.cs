@@ -10,6 +10,8 @@ namespace MInhaRotina
 		public RegisterPlace ()
 		{
 			InitializeComponent ();
+
+			BindingContext = new RegisterPlaceVM();
 		}
 	}
 }

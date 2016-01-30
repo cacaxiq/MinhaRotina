@@ -4,9 +4,17 @@ namespace MInhaRotina
 {
 	public class Place
 	{
-		public Place ()
-		{
-		}
+
+			public string Description {
+				get;
+				set;
+			}
+
+			public string Localization {
+				get;
+				set;
+			}
+	
 	}
 }
 
