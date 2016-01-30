@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class RegisterPlace : ContentPage
+	public partial class RegisterPlaceView : ContentPage
 	{
-		public RegisterPlace ()
+		public RegisterPlaceView ()
 		{
 			InitializeComponent ();
 
