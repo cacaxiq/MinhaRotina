@@ -12,6 +12,9 @@ namespace MInhaRotina
 			InitializeComponent ();
 
 			BindingContext = new DashboardVM ();
+
+			Xamarin.Insights.Track("Abriu o Dashboard");
+
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using System.Linq;
 
 namespace MInhaRotina
 {
@@ -8,8 +9,16 @@ namespace MInhaRotina
 	{
 		public App ()
 		{
-			// The root page of your application
-			MainPage = new NavigationPage(new LoginView());
+			try {
+
+
+				Xamarin.Insights.Track ("Abriu o App");
+				// The root page of your application
+				MainPage = new NavigationPage (new LoginView ());
+//				throw new Exception ("Testando Telemetria");
+			} catch (Exception ex) {
+				Xamarin.Insights.Report (ex, Xamarin.Insights.Severity.Error);
+			}
 		}
 
 		protected override void OnStart ()

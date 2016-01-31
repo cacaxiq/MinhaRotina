@@ -39,13 +39,26 @@ namespace MInhaRotina
 
 			Device.BeginInvokeOnMainThread (() => {
 				this.Localization = string.Format ("{0} - {1} - {2}", position.Timestamp, position.Latitude, position.Longitude);
-
+				Place.Latitude = position.Latitude;
+				Place.Longitude = position.Longitude;
 			});
 		}
 
 		protected void InsertPlace ()
 		{
-			var teste = "222";
+			var banco = new TodoItemDatabase ();
+			var item = new TodoItem {
+				Description = Place.Description,
+				Latitude = Place.Latitude,
+				Longitude = Place.Longitude
+			};
+
+			try {
+				var id = banco.SaveItem (item);
+			} catch (Exception ex) {
+				
+			}
+	
 		}
 
 		public string Description {

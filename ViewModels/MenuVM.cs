@@ -9,7 +9,7 @@ namespace MInhaRotina
 		public MenuVM (Page mypage) : base (mypage)
 		{
 			RegisterPlace = new Command (() => {
-				MyPage.Navigation.PushAsync (new RegisterPlaceView ());
+				MyPage.Navigation.PushAsync (new RegisterPlaceListView ());
 			});
 
 

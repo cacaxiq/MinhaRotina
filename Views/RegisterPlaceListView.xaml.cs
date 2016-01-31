@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class MainPageView : ContentPage
+	public partial class RegisterPlaceListView : ContentPage
 	{
-		public MainPageView ()
+		public RegisterPlaceListView ()
 		{
 			InitializeComponent ();
 
-			Xamarin.Insights.Track("Abriu MainPage");
-
+			BindingContext = new RegisterPlaceListVM ();
 		}
 	}
 }
