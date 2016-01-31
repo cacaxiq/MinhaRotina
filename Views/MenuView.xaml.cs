@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class RegisterPlaceView : ContentPage
+	public partial class MenuView : ContentPage
 	{
-		public RegisterPlaceView ()
+		public MenuView ()
 		{
 			InitializeComponent ();
 
-			BindingContext = new RegisterPlaceVM();
+			BindingContext = new MenuVM (this);
 		}
 	}
 }

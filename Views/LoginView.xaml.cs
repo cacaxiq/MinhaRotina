@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class RegisterPlaceView : ContentPage
+	public partial class LoginView : ContentPage
 	{
-		public RegisterPlaceView ()
+		public LoginView ()
 		{
 			InitializeComponent ();
 
-			BindingContext = new RegisterPlaceVM();
+			BindingContext = new LoginVM (this);
 		}
 	}
 }

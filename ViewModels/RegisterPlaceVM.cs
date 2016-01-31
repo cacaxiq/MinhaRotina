@@ -2,24 +2,15 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
+using Plugin.Geolocator;
+using System.Threading.Tasks;
 
 
 namespace MInhaRotina
 {
-	public class RegisterPlaceVM : INotifyPropertyChanged  
+	public class RegisterPlaceVM : BaseVM
 	{
-		#region INotifyPropertyChanged implementation
-
-		public event PropertyChangedEventHandler PropertyChanged;
-		#endregion
-
-		public virtual void OnPropChange(string propertyName)
-		{
-			if (PropertyChanged != null) {
-				PropertyChanged (this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-
 		public Place Place { get; set; }
 
 		public ICommand SavePlace {
@@ -31,30 +22,50 @@ namespace MInhaRotina
 		{
 			Place = new Place ();
 
-			SavePlace = new Command(()=>{
-				InsertPlace();
+			SavePlace = new Command (() => {
+				InsertPlace ();
 			});
+
+			Local ();
 
 		}
 
-		protected void InsertPlace(){
+		protected async Task Local ()
+		{
+			var locator = CrossGeolocator.Current;
+			locator.DesiredAccuracy = 50;
+
+			var position = await locator.GetPositionAsync (timeoutMilliseconds: 10000);
+
+			Device.BeginInvokeOnMainThread (() => {
+				this.Localization = string.Format ("{0} - {1} - {2}", position.Timestamp, position.Latitude, position.Longitude);
+
+			});
+		}
+
+		protected void InsertPlace ()
+		{
 			var teste = "222";
 		}
 
 		public string Description {
-			get{return this.Place.Description;}
-			set{ if (this.Place.Description != value) {
+			get{ return this.Place.Description; }
+			set {
+				if (this.Place.Description != value) {
 					this.Place.Description = value;
-					OnPropChange("Description");
-				}}
+					OnPropChange ("Description");
+				}
+			}
 		}
 
 		public string Localization {
-			get{return this.Place.Localization;}
-			set{ if (this.Place.Localization != value) {
+			get{ return this.Place.Localization; }
+			set {
+				if (this.Place.Localization != value) {
 					this.Place.Localization = value;
-					OnPropChange("Localization");
-				}}
+					OnPropChange ("Localization");
+				}
+			}
 		}
 	}
 }

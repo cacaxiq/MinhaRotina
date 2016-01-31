@@ -4,13 +4,11 @@ using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class RegisterPlaceView : ContentPage
+	public partial class MainPageView : ContentPage
 	{
-		public RegisterPlaceView ()
+		public MainPageView ()
 		{
 			InitializeComponent ();
-
-			BindingContext = new RegisterPlaceVM();
 		}
 	}
 }

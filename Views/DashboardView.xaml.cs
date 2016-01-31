@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Xamarin.Forms;
 
 namespace MInhaRotina
 {
-	public partial class RegisterPlaceView : ContentPage
+	public partial class DashboardView : ContentPage
 	{
-		public RegisterPlaceView ()
+		public DashboardView ()
 		{
 			InitializeComponent ();
 
-			BindingContext = new RegisterPlaceVM();
+			BindingContext = new DashboardVM ();
 		}
 	}
 }

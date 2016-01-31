@@ -9,7 +9,7 @@ namespace MInhaRotina
 		public App ()
 		{
 			// The root page of your application
-			MainPage = new RegisterPlaceView();
+			MainPage = new NavigationPage(new LoginView());
 		}
 
 		protected override void OnStart ()
