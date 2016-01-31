@@ -12,7 +12,6 @@ namespace MInhaRotina
 				MyPage.Navigation.PushAsync (new RegisterPlaceListView ());
 			});
 
-
 			Dashboard = new Command (() => {
 				MyPage.Navigation.PushAsync (new DashboardView ());
 			});
@@ -26,7 +25,7 @@ namespace MInhaRotina
 		public ICommand RegisterPlace {
 			get;
 			protected set;
-		}		
+		}
 
 		public ICommand Dashboard {
 			get;

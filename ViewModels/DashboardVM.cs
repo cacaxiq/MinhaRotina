@@ -1,10 +1,11 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace MInhaRotina
 {
 	public class DashboardVM:BaseVM
 	{
-		public DashboardVM ()
+		public DashboardVM (Page mypage) : base (mypage)
 		{
 		}
 	}

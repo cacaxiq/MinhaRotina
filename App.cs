@@ -10,12 +10,10 @@ namespace MInhaRotina
 		public App ()
 		{
 			try {
-
-
-				Xamarin.Insights.Track ("Abriu o App");
+				Xamarin.Insights.Track ("App Incializado");
 				// The root page of your application
 				MainPage = new NavigationPage (new LoginView ());
-//				throw new Exception ("Testando Telemetria");
+				// throw new Exception ("Testando Telemetria");
 			} catch (Exception ex) {
 				Xamarin.Insights.Report (ex, Xamarin.Insights.Severity.Error);
 			}

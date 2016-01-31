@@ -11,6 +11,10 @@ namespace MInhaRotina
 {
 	public class RegisterPlaceVM : BaseVM
 	{
+		public RegisterPlaceVM ()
+		{
+			
+		}
 		public Place Place { get; set; }
 
 		public ICommand SavePlace {
@@ -18,7 +22,7 @@ namespace MInhaRotina
 			protected set;
 		}
 
-		public RegisterPlaceVM ()
+		public RegisterPlaceVM (Page mypage) : base (mypage)
 		{
 			Place = new Place ();
 
@@ -36,6 +40,10 @@ namespace MInhaRotina
 			locator.DesiredAccuracy = 50;
 
 			var position = await locator.GetPositionAsync (timeoutMilliseconds: 10000);
+
+			if (position == null) {
+				Xamarin.Insights.Report (new Exception("Falha obtencao posicao!"),Xamarin.Insights.Severity.Warning);
+			}
 
 			Device.BeginInvokeOnMainThread (() => {
 				this.Localization = string.Format ("{0} - {1} - {2}", position.Timestamp, position.Latitude, position.Longitude);
@@ -55,8 +63,9 @@ namespace MInhaRotina
 
 			try {
 				var id = banco.SaveItem (item);
+				MyPage.Navigation.PopAsync();
 			} catch (Exception ex) {
-				
+				Xamarin.Insights.Report (ex,Xamarin.Insights.Severity.Critical);
 			}
 	
 		}

@@ -3483,8 +3483,11 @@ namespace MInhaRotina.Droid
 			// aapt resource value: 0x7f02007d
 			public const int mr_ic_settings_light = 2130837629;
 			
+			// aapt resource value: 0x7f02007f
+			public const int notification_template_icon_bg = 2130837631;
+			
 			// aapt resource value: 0x7f02007e
-			public const int notification_template_icon_bg = 2130837630;
+			public const int SplashDesing = 2130837630;
 			
 			static Drawable()
 			{
@@ -4754,8 +4757,8 @@ namespace MInhaRotina.Droid
 			// aapt resource value: 0x7f070002
 			public const int CardView_Light = 2131165186;
 			
-			// aapt resource value: 0x7f070144
-			public const int Mono_Android_Theme_Splash = 2131165508;
+			// aapt resource value: 0x7f070145
+			public const int Mono_Android_Theme_Splash = 2131165509;
 			
 			// aapt resource value: 0x7f070025
 			public const int Platform_AppCompat = 2131165221;
@@ -5044,6 +5047,9 @@ namespace MInhaRotina.Droid
 			
 			// aapt resource value: 0x7f070013
 			public const int Theme_MediaRouter_Light = 2131165203;
+			
+			// aapt resource value: 0x7f070144
+			public const int Theme_Splash = 2131165508;
 			
 			// aapt resource value: 0x7f0700fd
 			public const int ThemeOverlay_AppCompat = 2131165437;

@@ -10,8 +10,9 @@ namespace MInhaRotina
 		public RegisterPlaceListView ()
 		{
 			InitializeComponent ();
+			Xamarin.Insights.Track ("Tela Visitada: RegisterPlaceListView");
 
-			BindingContext = new RegisterPlaceListVM ();
+			BindingContext = new RegisterPlaceListVM (this);
 		}
 	}
 }

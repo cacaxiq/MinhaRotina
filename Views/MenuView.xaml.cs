@@ -10,6 +10,7 @@ namespace MInhaRotina
 		public MenuView ()
 		{
 			InitializeComponent ();
+			Xamarin.Insights.Track ("Tela Visitada: MenuView");
 
 			BindingContext = new MenuVM (this);
 		}

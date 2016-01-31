@@ -9,8 +9,7 @@ namespace MInhaRotina
 		public MainPageView ()
 		{
 			InitializeComponent ();
-
-			Xamarin.Insights.Track("Abriu MainPage");
+			Xamarin.Insights.Track ("Tela Visitada: MainPageView");
 
 		}
 	}

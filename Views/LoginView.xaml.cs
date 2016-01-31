@@ -10,7 +10,7 @@ namespace MInhaRotina
 		public LoginView ()
 		{
 			InitializeComponent ();
-			Xamarin.Insights.Track("Tela de Login");
+			Xamarin.Insights.Track ("Tela Visitada: LoginView");
 
 			BindingContext = new LoginVM (this);
 		}

@@ -10,11 +10,9 @@ namespace MInhaRotina
 		public DashboardView ()
 		{
 			InitializeComponent ();
+			Xamarin.Insights.Track ("Tela Visitada: DashboardView");
 
-			BindingContext = new DashboardVM ();
-
-			Xamarin.Insights.Track("Abriu o Dashboard");
-
+			BindingContext = new DashboardVM (this);
 		}
 	}
 }
